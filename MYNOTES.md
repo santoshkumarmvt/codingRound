@@ -1,4 +1,4 @@
-#1. My comments on existing code
+#1. My comments on existing code (all are incorporated)
 Make use of consistent pattern
 	- One class is using page factory pattern and others are not.
 	
@@ -19,6 +19,8 @@ Remove classes from default package to avoid not being able create object of the
 Create one properties file(config.properties) to keep config related stuffs eg.: appURL etc.
 
 Proper exception handling, not just e.printstacktrace().
+
+Use selenium waits as much as possible.
 
 #2. Below fixes are done
 For all tests WebDriver was being initialized with ChromeDriver before setting the path for chromeDriver.

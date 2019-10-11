@@ -6,16 +6,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
 public class FlightBookingPage {
 
     private WebDriver driver;
+
+    private WebDriverWait wait;
     
     public FlightBookingPage(WebDriver driver) {
     	this.driver = driver;
     	PageFactory.initElements(driver, this);
+        wait = new WebDriverWait(driver, 10);
     }
     
     @FindBy(id = "OneWay")
@@ -48,14 +53,14 @@ public class FlightBookingPage {
     public void typeInFromTxtBx(String value) {
     	fromTxtBx.clear();
     	fromTxtBx.sendKeys(value);
-    	WebElementUtility.waitFor(5000);
+    	wait.until(ExpectedConditions.visibilityOfAllElements(fromCityList));
     	fromCityList.get(0).click();
     }
     
     public void typeInToTxtBx(String value) {
     	toTxtBx.clear();
     	toTxtBx.sendKeys(value);
-    	WebElementUtility.waitFor(5000);
+        wait.until(ExpectedConditions.visibilityOfAllElements(toCityList));
     	toCityList.get(0).click();
     }
     

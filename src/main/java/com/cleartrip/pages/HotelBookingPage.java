@@ -6,17 +6,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
 public class HotelBookingPage {
 
 	private WebDriver driver;
+	private WebDriverWait wait;
 
 	public HotelBookingPage(WebDriver driver) {
     	this.driver = driver;
     	PageFactory.initElements(driver, this);
+    	wait = new WebDriverWait(this.driver, 10);
     }
 
 	@FindBy(linkText = "Hotels")
@@ -43,7 +47,7 @@ public class HotelBookingPage {
 	public void typeInLocalityTextBox(String value) {
 		localityTxtBx.clear();
 		localityTxtBx.sendKeys(value);
-		WebElementUtility.waitFor(5000);
+		wait.until(ExpectedConditions.visibilityOfAllElements(locationList));
 		locationList.get(0).click();
 	}
 	
