@@ -16,7 +16,7 @@ public class FlightBookingPageTest extends BaseClass{
 		flightBookingPage.typeInFromTxtBx("Bangalore");
 		flightBookingPage.typeInToTxtBx("Delhi");
 		flightBookingPage.selectDate();
-		flightBookingPage.clickOnSerchBtn();
+		flightBookingPage.clickOnSearchBtn();
 		
 		Assert.assertTrue(flightBookingPage.isSearchSummaryPresent(), "Search summary is not present");
 	}

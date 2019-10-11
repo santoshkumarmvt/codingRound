@@ -52,6 +52,7 @@ public class HotelBookingPage {
 	}
 	
 	public void clickOnSearchButton() {
+
 		searchBtn.click();
 	}
 	

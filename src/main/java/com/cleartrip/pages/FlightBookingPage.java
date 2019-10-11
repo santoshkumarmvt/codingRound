@@ -63,7 +63,7 @@ public class FlightBookingPage {
     	dtpkr.click();
     }
     
-    public void clickOnSerchBtn() {
+    public void clickOnSearchBtn() {
     	searchBtn.click();
     	WebElementUtility.waitFor(5000);
     }

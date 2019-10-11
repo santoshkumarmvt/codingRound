@@ -4,7 +4,8 @@
  	<test name="coding round test">
 		<classes>
             <class name = "com.cleartrip.tests.FlightBookingPageTest" />
-            <class name = "com.cleartrip.tests.HotelBookingPageTest" />
+			<class name = "com.cleartrip.tests.HotelBookingPageTest" />
+			<class name = "com.cleartrip.tests.SignInPageTest" />
 		</classes>
 	</test>
 </suite> 
